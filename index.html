@@ -359,7 +359,7 @@
     .contact-wrap {
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: 24px; padding: 4rem 3rem;
-      position: relative; overflow: hidden;
+      position: relative; z-index: 10000; overflow: hidden;
     }
     .contact-wrap::before {
       content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%);
@@ -375,6 +375,8 @@
       background: rgba(255,255,255,.05); border: 1px solid var(--border);
       border-radius: 10px; padding: .72rem 1.4rem;
       font-size: .88rem; color: var(--t1); text-decoration: none; font-weight: 500;
+      cursor: pointer;
+      position: relative; z-index: 10000;
       transition: border-color .2s, color .2s, background .2s, transform .2s;
     }
     .c-link:hover { border-color: var(--border-t); color: var(--m-red); background: var(--teal-dim); transform: translateY(-2px); }
@@ -424,7 +426,7 @@
 <!-- NAV -->
 <nav id="nav">
   <a class="nav-logo" href="#">
-    AM <span style="color:var(--m-blue)">/</span><span style="color:var(--m-dark)">/</span><span style="color:var(--m-red)">/</span>M
+    Anirudh <span style="color:var(--m-blue)">/</span><span style="color:var(--m-dark)">/</span><span style="color:var(--m-red)">/</span>M
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -815,7 +817,10 @@
       <h2 class="contact-title">Open to Opportunities</h2>
       <p class="contact-sub">Internships &nbsp;·&nbsp; Full-time Roles &nbsp;·&nbsp; Collaborative Projects &nbsp;·&nbsp; Research</p>
       <div class="contact-links">
-        <a href="mailto:anirudhmadhavan13@gmail.com" class="c-link">✉&nbsp; anirudhmadhavan13@gmail.com</a>
+        <a href="mailto:anirudhmadhavan13@gmail.com"
+           class="c-link"
+           onclick="window.location.href='mailto:anirudhmadhavan13@gmail.com'; return false;"
+           rel="noopener">✉&nbsp; anirudhmadhavan13@gmail.com</a>
         <a href="https://www.linkedin.com/in/anirudhm4" target="_blank" rel="noopener" class="c-link">💼&nbsp; LinkedIn — @anirudhm4</a>
         <a href="tel:+919500247685" class="c-link">📞&nbsp; +91 95002 47685</a>
       </div>
