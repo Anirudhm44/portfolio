@@ -14,10 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --bg:          #050505;
       --bg-2:        #0F0F0F;
@@ -35,13 +33,11 @@
       --t3:          #666666;
       --glow:        0 0 50px rgba(210,17,44,0.15);
     }
-
-    /* RESPONSIVE: html/body hardened against horizontal scroll & zoom-jank on all breakpoints (320px–ultra-wide) */
     html {
       scroll-behavior: smooth;
       width: 100%;
       overflow-x: hidden;
-      -webkit-text-size-adjust: 100%; /* prevent iOS auto text zoom breaking layout */
+      -webkit-text-size-adjust: 100%;
       text-size-adjust: 100%;
     }
     body {
@@ -52,25 +48,19 @@
       max-width: 100vw;
       overflow-x: hidden;
     }
-    img, svg, video, canvas { max-width: 100%; height: auto; display: block; } /* RESPONSIVE: images/icons/SVGs never overflow */
-    /* RESPONSIVE: prevent body scroll when mobile menu is open */
+    img, svg, video, canvas { max-width: 100%; height: auto; display: block; }
     body.no-scroll { overflow: hidden; height: 100%; }
-    /* ACCESSIBILITY: visible keyboard focus ring on interactive elements (buttons/links) */
     a:focus-visible, button:focus-visible {
       outline: 2px solid var(--m-blue); outline-offset: 3px; border-radius: 4px;
     }
-
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--m-red); border-radius: 10px; }
-
     body::after {
       content: ''; position: fixed; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
       pointer-events: none; z-index: 9999; opacity: 0.5;
     }
-
-    /* ── NAV ── (RESPONSIVE: sticky navbar, fluid horizontal padding via clamp so it never crowds on small phones or floats on ultra-wide) */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 200; height: 62px;
@@ -88,14 +78,14 @@
       font-family: 'Syne', sans-serif; font-weight: 800;
       font-size: clamp(1rem, 3vw, 1.15rem); color: var(--t1);
       text-decoration: none; letter-spacing: -.02em;
-      white-space: nowrap; /* RESPONSIVE: prevent logo wrapping/clipping on narrow phones */
+      white-space: nowrap;
     }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
       color: var(--t2); text-decoration: none;
       font-size: clamp(.8rem, 1vw, .85rem); font-weight: 500;
       letter-spacing: .025em; transition: color .2s;
-      display: inline-flex; align-items: center; min-height: 44px; /* RESPONSIVE: comfortable touch target */
+      display: inline-flex; align-items: center; min-height: 44px;
     }
     .nav-links a:hover { color: var(--t1); }
     .nav-cta {
@@ -104,10 +94,8 @@
       font-weight: 600 !important; transition: background .2s !important;
     }
     .nav-cta:hover { background: #b50e24 !important; }
-
-    /* ── SHARED ── (RESPONSIVE: clamp() replaces fixed % / px so gutters + section rhythm scale smoothly 320px→ultra-wide) */
     .container { max-width: 1080px; margin: 0 auto; padding: 0 clamp(1rem, 5%, 4rem); width: 100%; }
-    section { padding: clamp(60px, 10vw, 110px) 0; scroll-margin-top: 62px; } /* RESPONSIVE: anchor targets aren't hidden under the fixed/sticky nav */
+    section { padding: clamp(60px, 10vw, 110px) 0; scroll-margin-top: 62px; }
     .s-label {
       font-size: clamp(.66rem, 1.6vw, .72rem); font-weight: 600; letter-spacing: .2em;
       text-transform: uppercase; color: var(--m-red);
@@ -118,18 +106,16 @@
       font-size: clamp(1.7rem, 3.8vw, 2.7rem);
       font-weight: 700; color: var(--t1);
       line-height: 1.15; margin-bottom: 1.1rem;
-      overflow-wrap: break-word; /* RESPONSIVE: prevent text clipping/overflow on narrow phones */
+      overflow-wrap: break-word;
     }
     .s-rule {
       width: 60px; height: 3px;
       background: linear-gradient(to right, var(--m-blue) 33%, var(--m-dark) 33% 66%, var(--m-red) 66%);
       border-radius: 2px; margin-bottom: 3rem;
     }
-
-    /* ── HERO ── */
     #hero {
       min-height: 100vh;
-      min-height: 100dvh; /* RESPONSIVE: dynamic viewport height avoids mobile browser URL-bar jump/cut-off */
+      min-height: 100dvh;
       display: flex; align-items: center;
       padding-top: 62px; padding-bottom: clamp(2rem, 6vw, 0px);
       position: relative; overflow: hidden;
@@ -150,7 +136,6 @@
       -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 100%);
     }
     .hero-inner { position: relative; z-index: 2; width: 100%; }
-
     .hero-badge {
       display: inline-flex; align-items: center; gap: .5rem;
       background: var(--teal-dim); border: 1px solid var(--border-t);
@@ -167,10 +152,9 @@
       0%,100% { opacity:1; transform: scale(1); }
       50% { opacity:.4; transform: scale(1.4); }
     }
-
     .hero-name {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(2.6rem, 12vw, 7rem); /* RESPONSIVE: lower floor + steeper vw so 320px phones never clip */
+      font-size: clamp(2.6rem, 12vw, 7rem);
       font-weight: 800; line-height: 1; letter-spacing: -.035em;
       background: linear-gradient(130deg, var(--m-blue) 0%, var(--m-dark) 45%, var(--m-red) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -200,7 +184,7 @@
       display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
       background: var(--m-red); color: #FFF;
       font-weight: 600; font-size: clamp(.85rem, 2vw, .88rem);
-      padding: .72rem 1.65rem; border-radius: 8px; min-height: 44px; /* RESPONSIVE: touch target */
+      padding: .72rem 1.65rem; border-radius: 8px; min-height: 44px;
       text-decoration: none; border: none; cursor: pointer;
       transition: transform .2s, box-shadow .2s, background .2s;
     }
@@ -209,12 +193,11 @@
       display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
       background: transparent; color: var(--t1);
       font-weight: 500; font-size: clamp(.85rem, 2vw, .88rem);
-      padding: .72rem 1.65rem; border-radius: 8px; min-height: 44px; /* RESPONSIVE: touch target */
+      padding: .72rem 1.65rem; border-radius: 8px; min-height: 44px;
       text-decoration: none; border: 1px solid var(--border); cursor: pointer;
       transition: border-color .2s, color .2s, transform .2s;
     }
     .btn-s:hover { border-color: var(--m-red); color: var(--m-red); transform: translateY(-2px); }
-
     .hero-stats {
       display: flex; gap: 3.5rem; flex-wrap: wrap;
       margin-top: 4rem; padding-top: 2.5rem;
@@ -223,36 +206,30 @@
     }
     .stat-v { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--m-red); }
     .stat-l { font-size: .75rem; color: var(--t3); text-transform: uppercase; letter-spacing: .1em; margin-top: .15rem; }
-
     @keyframes fiu {
       from { opacity:0; transform: translateY(22px); }
       to   { opacity:1; transform: translateY(0); }
     }
-
-    /* ── ABOUT ── */
-    /* RESPONSIVE: about-grid collapses to 1 column ≤820px via media query below; gap is fluid here */
     .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
     .about-text p { color: var(--t2); font-size: clamp(.92rem, 1.6vw, 1.02rem); line-height: 1.82; margin-bottom: 1.2rem; }
     .about-text p strong { color: var(--t1); }
-    .info-stack { display: flex; flex-direction: column; gap: .85rem; min-width: 0; } /* min-width:0 lets grid children shrink instead of overflowing */
+    .info-stack { display: flex; flex-direction: column; gap: .85rem; min-width: 0; }
     .info-card {
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: 12px; padding: 1.1rem 1.4rem;
       display: flex; align-items: center; gap: 1rem;
       transition: background .2s, border-color .2s;
-      min-width: 0; /* RESPONSIVE: allow inner text to wrap/truncate instead of forcing horizontal scroll */
+      min-width: 0;
     }
     .info-card:hover { background: var(--bg-card-h); border-color: var(--border-t); }
     .info-icon { font-size: clamp(1.1rem, 3vw, 1.3rem); width: 36px; text-align: center; flex-shrink: 0; }
     .info-lbl { font-size: .72rem; color: var(--t3); text-transform: uppercase; letter-spacing: .1em; margin-bottom: .1rem; }
     .info-val { font-size: clamp(.85rem, 1.6vw, .92rem); color: var(--t1); font-weight: 500; word-break: break-word; }
-
-    /* ── SKILLS ── (RESPONSIVE: minmax() uses min() against 100% so cards never force horizontal scroll below ~280px content width; grid stretch = equal card heights per row) */
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 1.25rem; align-items: stretch; }
     .sk-cat {
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: 16px; padding: clamp(1.1rem, 3vw, 1.5rem); transition: border-color .3s;
-      height: 100%; /* equal card heights within a row */
+      height: 100%;
     }
     .sk-cat:hover { border-color: var(--border-t); }
     .sk-cat-title {
@@ -264,12 +241,9 @@
       background: rgba(255,255,255,.045); border: 1px solid var(--border);
       border-radius: 6px; padding: .28rem .7rem;
       font-size: clamp(.76rem, 1.6vw, .8rem); color: var(--t2); font-weight: 500; transition: all .2s;
-      max-width: 100%; overflow-wrap: break-word; /* RESPONSIVE: long tag text wraps instead of overflowing */
+      max-width: 100%; overflow-wrap: break-word;
     }
     .sk-tag:hover, .sk-tag.hi { background: var(--teal-dim); border-color: var(--border-t); color: var(--m-red); }
-
-    /* ── EXPERIENCE ── */
-    /* RESPONSIVE: exp-card padding scales down on phones so content isn't cramped by fixed 2.5rem padding */
     .exp-card {
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: 20px; padding: clamp(1.4rem, 5vw, 2.5rem);
@@ -284,7 +258,7 @@
     .exp-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
     .exp-co { font-family: 'Syne', sans-serif; font-size: clamp(1.1rem, 3vw, 1.35rem); font-weight: 700; color: var(--t1); }
     .exp-rol { color: var(--m-red); font-weight: 500; font-size: .98rem; margin-top: .2rem; }
-    .exp-meta-r { text-align: right; } /* switches to text-align:left + stacks below title on mobile (see media query) */
+    .exp-meta-r { text-align: right; }
     .exp-date { font-size: .83rem; color: var(--t3); font-weight: 500; }
     .exp-loc { font-size: .78rem; color: var(--t3); margin-top: .15rem; }
     .exp-desc { color: var(--t2); font-size: clamp(.88rem, 1.8vw, .94rem); line-height: 1.75; margin-bottom: 1.5rem; }
@@ -298,14 +272,11 @@
       font-size: clamp(.72rem, 1.6vw, .76rem); color: var(--m-blue); font-weight: 500;
       max-width: 100%; overflow-wrap: break-word;
     }
-
-    /* ── PROJECTS ── (RESPONSIVE: min(310px,100%) means a lone column never exceeds the viewport on 320–480px phones;
-       natural auto-fit behavior already yields 1 col on phones, 2 on tablets, 3 on desktop — reinforced explicitly in media queries below) */
     .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(310px, 100%), 1fr)); gap: 1.5rem; align-items: stretch; }
     .proj-card {
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: 20px; padding: clamp(1.4rem, 4vw, 2rem);
-      display: flex; flex-direction: column; gap: .9rem; height: 100%; /* equal card heights per row */
+      display: flex; flex-direction: column; gap: .9rem; height: 100%;
       position: relative; overflow: hidden;
       transition: border-color .3s, transform .3s, box-shadow .3s;
     }
@@ -332,8 +303,6 @@
       border-radius: 5px; padding: .18rem .58rem; font-size: .73rem; color: var(--t3);
       max-width: 100%; overflow-wrap: break-word;
     }
-
-    /* ── EDUCATION ── (RESPONSIVE: fluid padding + min-width:0 on text column so long course names wrap instead of causing horizontal scroll) */
     .edu-card {
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: 20px; padding: clamp(1.4rem, 4vw, 2rem) clamp(1.4rem, 5vw, 2.5rem);
@@ -351,13 +320,11 @@
       border-radius: 5px; padding: .18rem .58rem; font-size: .73rem; color: var(--t3);
       max-width: 100%; overflow-wrap: break-word;
     }
-
-    /* ── CERTIFICATIONS ── (RESPONSIVE: auto-fit + min() keeps this an honest auto-fit/auto-fill responsive grid without ever forcing a card wider than the viewport) */
     .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr)); gap: 1.25rem; align-items: stretch; }
     .cert-card {
       background: var(--bg-card); border: 1px solid var(--border);
       border-radius: 16px; padding: clamp(1.15rem, 3vw, 1.5rem);
-      display: flex; flex-direction: column; gap: .6rem; height: 100%; /* equal-height cards */
+      display: flex; flex-direction: column; gap: .6rem; height: 100%;
       position: relative; overflow: hidden;
       transition: border-color .3s, transform .25s;
     }
@@ -376,8 +343,6 @@
     .cert-date { font-size: .76rem; color: var(--t3); }
     .cert-score { font-family: 'Syne', sans-serif; font-size: .88rem; font-weight: 700; color: var(--m-red); }
     .cert-id { font-size: .7rem; color: var(--t3); font-style: italic; overflow-wrap: break-word; }
-
-    /* ── ACHIEVEMENTS ── (RESPONSIVE: min() guard + stretch for equal-height cards; icon scales with clamp) */
     .ach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 1.2rem; align-items: stretch; }
     .ach-card {
       background: var(--bg-card); border: 1px solid var(--border);
@@ -390,9 +355,6 @@
     .ach-ico { font-size: clamp(1.7rem, 4vw, 2rem); width: 44px; flex-shrink: 0; text-align: center; }
     .ach-title { font-family: 'Syne', sans-serif; font-size: clamp(.88rem, 2vw, .92rem); font-weight: 700; color: var(--t1); margin-bottom: .28rem; overflow-wrap: break-word; }
     .ach-desc { font-size: clamp(.78rem, 1.6vw, .81rem); color: var(--t2); line-height: 1.65; overflow-wrap: break-word; }
-
-    /* ── CONTACT ── */
-    /* ── CONTACT ── (RESPONSIVE: fluid padding via clamp; links wrap and can go full-width stacked on very small phones — see media query) */
     #contact { text-align: center; }
     .contact-wrap {
       background: var(--bg-card); border: 1px solid var(--border);
@@ -412,39 +374,28 @@
     .c-link {
       display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
       background: rgba(255,255,255,.05); border: 1px solid var(--border);
-      border-radius: 10px; padding: .72rem 1.4rem; min-height: 44px; /* touch target */
+      border-radius: 10px; padding: .72rem 1.4rem; min-height: 44px;
       font-size: clamp(.82rem, 1.8vw, .88rem); color: var(--t1); text-decoration: none; font-weight: 500;
       cursor: pointer; max-width: 100%; overflow-wrap: break-word;
       position: relative; z-index: 10000;
       transition: border-color .2s, color .2s, background .2s, transform .2s;
     }
     .c-link:hover { border-color: var(--border-t); color: var(--m-red); background: var(--teal-dim); transform: translateY(-2px); }
-
-    /* ── FOOTER ── */
     footer { text-align: center; padding: 2.5rem 5%; border-top: 1px solid var(--border); color: var(--t3); font-size: .8rem; }
     footer em { color: var(--m-red); font-style: normal; }
-
-    /* ── REVEAL ANIMATIONS ── */
     .rv { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
     .rv.on { opacity: 1; transform: translateY(0); }
     .rv.d1 { transition-delay: .1s; }
     .rv.d2 { transition-delay: .2s; }
     .rv.d3 { transition-delay: .3s; }
     .rv.d4 { transition-delay: .4s; }
-
-    /* ══════════════════════════════════════════════════════════════
-       RESPONSIVE: MOBILE NAV — animated hamburger, slide/fade panel,
-       backdrop overlay (click-outside-to-close), body-scroll lock.
-       ══════════════════════════════════════════════════════════════ */
     .nav-menu-btn {
       display: none; background: none; border: none; color: var(--t2); cursor: pointer;
-      width: 44px; height: 44px; /* touch target */
+      width: 44px; height: 44px;
       align-items: center; justify-content: center;
       padding: 0; position: relative; z-index: 210;
     }
     @media (max-width: 820px) { .nav-menu-btn { display: flex; } }
-
-    /* Animated hamburger → X icon, built from 3 spans instead of a static glyph */
     .nav-menu-btn .hb {
       display: block; position: relative; width: 22px; height: 16px;
     }
@@ -459,15 +410,12 @@
     .nav-menu-btn.is-open .hb span:nth-child(1) { top: 7px; transform: rotate(45deg); }
     .nav-menu-btn.is-open .hb span:nth-child(2) { opacity: 0; }
     .nav-menu-btn.is-open .hb span:nth-child(3) { top: 7px; transform: rotate(-45deg); }
-
-    /* Backdrop overlay behind the panel — click it to close (outside-click) */
     .mobile-nav-overlay {
       display: none; position: fixed; inset: 0; z-index: 198;
       background: rgba(0,0,0,.5);
       opacity: 0; transition: opacity .3s ease;
     }
     .mobile-nav-overlay.open { display: block; opacity: 1; }
-
     .mobile-nav {
       position: fixed;
       top: 62px; left: 0; right: 0;
@@ -476,7 +424,6 @@
       padding: 1.5rem clamp(1rem, 5%, 4rem); z-index: 199;
       display: flex; flex-direction: column; gap: .3rem;
       max-height: calc(100dvh - 62px); overflow-y: auto;
-      /* smooth open/close animation via transform + opacity instead of display:none/flex jump cuts */
       transform: translateY(-12px); opacity: 0; visibility: hidden;
       transition: transform .3s ease, opacity .3s ease, visibility .3s;
     }
@@ -488,46 +435,28 @@
     }
     .mobile-nav a:last-child { border-bottom: none; }
     .mobile-nav a:hover { color: var(--t1); }
-
-    /* ══════════════════════════════════════════════════════════════
-       RESPONSIVE: CONSOLIDATED BREAKPOINTS (desktop-first, merged —
-       no duplicate max-width rules). Ordered widest → narrowest so
-       later, more specific narrow-screen rules correctly override.
-       ══════════════════════════════════════════════════════════════ */
-
-    /* ≤1400px — ultra-wide/large-desktop comfort: container already caps at 1080px via max-width, nothing else needed */
-
-    /* ≤1200px */
     @media (max-width: 1200px) {
-      .proj-grid { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); } /* keeps 3-up comfortably */
+      .proj-grid { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
     }
-
-    /* ≤992px — small laptops / large tablets landscape */
     @media (max-width: 992px) {
       .hero-stats { gap: 2rem; }
       .container { padding: 0 clamp(1rem, 4%, 3rem); }
     }
-
-    /* ≤820px — tablets: nav collapses to hamburger, two-column layouts stack */
     @media (max-width: 820px) {
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .exp-head { flex-direction: column; }
-      .exp-meta-r { text-align: left; }              /* metadata stacks below title, left-aligned */
+      .exp-meta-r { text-align: left; }
       .edu-card { flex-direction: column; gap: 1rem; }
       .edu-yr { padding-top: 0; }
       .nav-links { display: none; }
       .hero-stats { gap: 1.8rem; }
       .contact-wrap { padding: clamp(2rem, 6vw, 2.5rem) clamp(1.25rem, 5vw, 1.5rem); }
       section { padding: clamp(56px, 9vw, 80px) 0; }
-      .proj-grid { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); } /* 2-up on tablets */
+      .proj-grid { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
     }
-
-    /* ≤768px — small tablets / large phones landscape */
     @media (max-width: 768px) {
       .hero-ctas { gap: .7rem; }
     }
-
-    /* ≤576px — phones: hero CTAs stack full-width vertically, hero-stats become a tighter 2-col grid */
     @media (max-width: 576px) {
       .hero-ctas { flex-direction: column; align-items: stretch; }
       .hero-ctas .btn-p, .hero-ctas .btn-s { width: 100%; }
@@ -539,21 +468,15 @@
       .c-link { width: 100%; }
       .edu-yr { min-width: 0; }
     }
-
-    /* ≤480px — small phones: tighten section rhythm further */
     @media (max-width: 480px) {
       section { padding: clamp(48px, 12vw, 64px) 0; }
       .contact-wrap { border-radius: 18px; }
       .exp-card, .proj-card, .cert-card, .ach-card, .edu-card, .sk-cat, .info-card { border-radius: 14px; }
     }
-
-    /* ≤320px — smallest supported phones: final safety net against clipping */
     @media (max-width: 320px) {
       .container { padding: 0 .85rem; }
       .hero-badge { font-size: .7rem; padding: .3rem .7rem; }
     }
-
-    /* Respect reduced-motion preference — pauses decorative pulse + reveal transforms */
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .rv, .hero-badge, .hero-name, .hero-role, .hero-tag, .hero-ctas, .hero-stats { transition: none !important; animation: none !important; opacity: 1 !important; transform: none !important; }
@@ -563,7 +486,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="nav">
   <a class="nav-logo" href="#">
     Anirudh <span style="color:var(--m-blue)">/</span><span style="color:var(--m-dark)">/</span><span style="color:var(--m-red)">/</span>M
@@ -577,26 +499,23 @@
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
-  <!-- RESPONSIVE: hamburger rebuilt with 3 spans so it can animate into an X; aria attrs for accessibility -->
   <button class="nav-menu-btn" id="navMenuBtn" onclick="toggleMobileNav()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
     <span class="hb"><span></span><span></span><span></span></span>
   </button>
 </nav>
 
-<!-- RESPONSIVE: backdrop overlay — clicking it closes the mobile menu (close-on-outside-click) -->
 <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
 
 <div class="mobile-nav" id="mobileNav">
-  <a href="#about"         onclick="closeMobileNav()">About</a>
-  <a href="#skills"        onclick="closeMobileNav()">Skills</a>
-  <a href="#experience"    onclick="closeMobileNav()">Experience</a>
-  <a href="#projects"      onclick="closeMobileNav()">Projects</a>
-  <a href="#education"     onclick="closeMobileNav()">Education</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#skills" onclick="closeMobileNav()">Skills</a>
+  <a href="#experience" onclick="closeMobileNav()">Experience</a>
+  <a href="#projects" onclick="closeMobileNav()">Projects</a>
+  <a href="#education" onclick="closeMobileNav()">Education</a>
   <a href="#certifications" onclick="closeMobileNav()">Certs</a>
-  <a href="#contact"       onclick="closeMobileNav()">Contact</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
 </div>
 
-<!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner container">
@@ -612,27 +531,13 @@
       <a href="#" class="btn-s" onclick="alert('Replace this with your hosted resume PDF link.');return false;">↓&nbsp; Resume</a>
     </div>
     <div class="hero-stats">
-      <div>
-        <div class="stat-v">2+</div>
-        <div class="stat-l">Software Projects</div>
-      </div>
-      <div>
-        <div class="stat-v">7</div>
-        <div class="stat-l">Certifications</div>
-      </div>
-      <div>
-        <div class="stat-v">1</div>
-        <div class="stat-l">Conference Paper</div>
-      </div>
-      <div>
-        <div class="stat-v">2025</div>
-        <div class="stat-l">Software Internship</div>
-      </div>
+      <div><div class="stat-v">2+</div><div class="stat-l">Software Projects</div></div>
+      <div><div class="stat-v">7</div><div class="stat-l">Certifications</div></div>
+      <div><div class="stat-v">2025</div><div class="stat-l">Software Internship</div></div>
     </div>
   </div>
 </section>
 
-<!-- ══ ABOUT ══ -->
 <section id="about">
   <div class="container">
     <span class="s-label rv">Who I Am</span>
@@ -647,36 +552,16 @@
         <p>I am actively seeking opportunities as a <strong>Software Developer</strong> where I can contribute to building high-quality software, collaborate with engineering teams, and continuously expand my expertise in modern software development, cloud technologies, and artificial intelligence.</p>
       </div>
       <div class="info-stack rv d3">
-        <div class="info-card">
-          <div class="info-icon">📍</div>
-          <div><div class="info-lbl">Location</div><div class="info-val">Pammal, Chennai, India</div></div>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">🎓</div>
-          <div><div class="info-lbl">Education</div><div class="info-val">B.E. EEE (Final Year) · Graduating 2027</div></div>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">💼</div>
-          <div><div class="info-lbl">Industry Experience</div><div class="info-val">Delivery Intern · Prodapt Solutions Pvt. Ltd.</div></div>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">📄</div>
-          <div><div class="info-lbl">Research</div><div class="info-val">ICECER 2025 · Carbon Capture Technologies</div></div>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">🌐</div>
-          <div><div class="info-lbl">Languages</div><div class="info-val">English</div></div>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">📬</div>
-          <div><div class="info-lbl">Email</div><div class="info-val">anirudhmadhavan13@gmail.com</div></div>
-        </div>
+        <div class="info-card"><div class="info-icon">📍</div><div><div class="info-lbl">Location</div><div class="info-val">Pammal, Chennai, India</div></div></div>
+        <div class="info-card"><div class="info-icon">🎓</div><div><div class="info-lbl">Education</div><div class="info-val">B.E. EEE (Final Year) · Graduating 2027</div></div></div>
+        <div class="info-card"><div class="info-icon">💼</div><div><div class="info-lbl">Industry Experience</div><div class="info-val">Delivery Intern · Prodapt Solutions Pvt. Ltd.</div></div></div>
+        <div class="info-card"><div class="info-icon">🌐</div><div><div class="info-lbl">Languages</div><div class="info-val">English</div></div></div>
+        <div class="info-card"><div class="info-icon">📬</div><div><div class="info-lbl">Email</div><div class="info-val">anirudhmadhavan13@gmail.com</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ SKILLS ══ -->
 <section id="skills">
   <div class="container">
     <span class="s-label rv">What I Work With</span>
@@ -686,50 +571,35 @@
       <div class="sk-cat rv d1">
         <div class="sk-cat-title">💻 Programming &amp; Core CS</div>
         <div class="sk-tags">
-          <span class="sk-tag hi">Python</span>
-          <span class="sk-tag hi">C</span>
-          <span class="sk-tag hi">SQL</span>
-          <span class="sk-tag">C++</span>
-          <span class="sk-tag">HTML</span>
-          <span class="sk-tag">CSS</span>
+          <span class="sk-tag hi">Python</span><span class="sk-tag hi">C</span><span class="sk-tag hi">SQL</span>
+          <span class="sk-tag">C++</span><span class="sk-tag">HTML</span><span class="sk-tag">CSS</span>
         </div>
       </div>
       <div class="sk-cat rv d2">
         <div class="sk-cat-title">⚙️ Application &amp; Workflow Development</div>
         <div class="sk-tags">
-          <span class="sk-tag hi">PowerApps</span>
-          <span class="sk-tag hi">Power Automate</span>
-          <span class="sk-tag hi">SharePoint Online</span>
-          <span class="sk-tag">Power BI</span>
-          <span class="sk-tag">Microsoft Teams</span>
-          <span class="sk-tag">Outlook Automation</span>
+          <span class="sk-tag hi">PowerApps</span><span class="sk-tag hi">Power Automate</span><span class="sk-tag hi">SharePoint Online</span>
+          <span class="sk-tag">Power BI</span><span class="sk-tag">Microsoft Teams</span><span class="sk-tag">Outlook Automation</span>
         </div>
       </div>
       <div class="sk-cat rv d3">
         <div class="sk-cat-title">📊 Data &amp; Dashboards</div>
         <div class="sk-tags">
-          <span class="sk-tag hi">MySQL</span>
-          <span class="sk-tag hi">Python matplotlib</span>
-          <span class="sk-tag">Power BI Dashboards</span>
-          <span class="sk-tag">Data Visualization</span>
-          <span class="sk-tag">UI/UX Design</span>
+          <span class="sk-tag hi">MySQL</span><span class="sk-tag hi">Python matplotlib</span>
+          <span class="sk-tag">Power BI Dashboards</span><span class="sk-tag">Data Visualization</span><span class="sk-tag">UI/UX Design</span>
         </div>
       </div>
       <div class="sk-cat rv d4">
         <div class="sk-cat-title">🔌 Applied IoT &amp; Embedded Projects</div>
         <div class="sk-tags">
-          <span class="sk-tag">ESP32</span>
-          <span class="sk-tag">Arduino</span>
-          <span class="sk-tag">Firebase IoT</span>
-          <span class="sk-tag">NDIR Sensors</span>
-          <span class="sk-tag">Serial Interface</span>
+          <span class="sk-tag">ESP32</span><span class="sk-tag">Arduino</span><span class="sk-tag">Firebase IoT</span>
+          <span class="sk-tag">NDIR Sensors</span><span class="sk-tag">Serial Interface</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ EXPERIENCE ══ -->
 <section id="experience">
   <div class="container">
     <span class="s-label rv">Where I've Worked</span>
@@ -737,10 +607,7 @@
     <div class="s-rule rv d2"></div>
     <div class="exp-card rv d2">
       <div class="exp-head">
-        <div>
-          <div class="exp-co">Prodapt Solutions Pvt. Ltd.</div>
-          <div class="exp-rol">Delivery Intern</div>
-        </div>
+        <div><div class="exp-co">Prodapt Solutions Pvt. Ltd.</div><div class="exp-rol">Delivery Intern</div></div>
         <div class="exp-meta-r">
           <div class="exp-date">Jun 10 – Jul 10, 2025 &nbsp;·&nbsp; 1 Month</div>
           <div class="exp-loc">📍 Chennai, India &nbsp;·&nbsp; On-site</div>
@@ -757,19 +624,13 @@
         <li>Implemented dynamic conditional-rendering logic so only relevant fields appear per request type, improving data integrity and reducing input errors — similar to frontend form validation.</li>
       </ul>
       <div class="tool-row">
-        <span class="tool-tag">PowerApps</span>
-        <span class="tool-tag">Power Automate</span>
-        <span class="tool-tag">Power BI</span>
-        <span class="tool-tag">SharePoint Online</span>
-        <span class="tool-tag">Microsoft Teams</span>
-        <span class="tool-tag">Outlook</span>
-        <span class="tool-tag">Microsoft 365</span>
+        <span class="tool-tag">PowerApps</span><span class="tool-tag">Power Automate</span><span class="tool-tag">Power BI</span>
+        <span class="tool-tag">SharePoint Online</span><span class="tool-tag">Microsoft Teams</span><span class="tool-tag">Outlook</span><span class="tool-tag">Microsoft 365</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ PROJECTS ══ -->
 <section id="projects">
   <div class="container">
     <span class="s-label rv">What I've Built</span>
@@ -783,12 +644,8 @@
         <p class="proj-desc">A full-stack, low-code enterprise application built end-to-end — front-end app, relational data layer, automated backend workflows, and an analytics dashboard — replacing a fully manual, paper-based process with a single digital system used organisation-wide.</p>
         <div class="proj-outcome">🏭 Deployed organisation-wide, replacing a fully manual process</div>
         <div class="proj-tags">
-          <span class="proj-tag">PowerApps</span>
-          <span class="proj-tag">Power Automate</span>
-          <span class="proj-tag">Power BI</span>
-          <span class="proj-tag">SharePoint Online</span>
-          <span class="proj-tag">Workflow Automation</span>
-          <span class="proj-tag">Enterprise App</span>
+          <span class="proj-tag">PowerApps</span><span class="proj-tag">Power Automate</span><span class="proj-tag">Power BI</span>
+          <span class="proj-tag">SharePoint Online</span><span class="proj-tag">Workflow Automation</span><span class="proj-tag">Enterprise App</span>
         </div>
       </div>
       <div class="proj-card rv d2">
@@ -798,12 +655,8 @@
         <p class="proj-desc">Wrote the Python control software for a dual-sensor tracking system, communicating over a serial interface with an Arduino to drive real-time actuation logic. Logged and analysed performance data to validate efficiency gains against a static baseline.</p>
         <div class="proj-outcome">⚡ ~48% improvement in captured energy output vs. fixed panel</div>
         <div class="proj-tags">
-          <span class="proj-tag">Python</span>
-          <span class="proj-tag">Arduino</span>
-          <span class="proj-tag">LDR Sensors</span>
-          <span class="proj-tag">Motor Control</span>
-          <span class="proj-tag">Serial Interface</span>
-          <span class="proj-tag">Data Logging</span>
+          <span class="proj-tag">Python</span><span class="proj-tag">Arduino</span><span class="proj-tag">LDR Sensors</span>
+          <span class="proj-tag">Motor Control</span><span class="proj-tag">Serial Interface</span><span class="proj-tag">Data Logging</span>
         </div>
       </div>
       <div class="proj-card rv d3">
@@ -813,20 +666,14 @@
         <p class="proj-desc">Built an end-to-end IoT data pipeline: ESP32 firmware for sensor acquisition, wireless transmission to a Firebase cloud backend, and a Python (matplotlib) dashboard for real-time visualisation and trend analysis of emission data. Aligned with UN SDGs 9, 11, and 13.</p>
         <div class="proj-outcome">📄 Conference Paper Submitted — ICECER 2025</div>
         <div class="proj-tags">
-          <span class="proj-tag">ESP32</span>
-          <span class="proj-tag">Firebase</span>
-          <span class="proj-tag">NDIR Sensors</span>
-          <span class="proj-tag">Python</span>
-          <span class="proj-tag">matplotlib</span>
-          <span class="proj-tag">Data Pipeline</span>
-          <span class="proj-tag">SDG 9 · 11 · 13</span>
+          <span class="proj-tag">ESP32</span><span class="proj-tag">Firebase</span><span class="proj-tag">NDIR Sensors</span>
+          <span class="proj-tag">Python</span><span class="proj-tag">matplotlib</span><span class="proj-tag">Data Pipeline</span><span class="proj-tag">SDG 9 · 11 · 13</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ EDUCATION ══ -->
 <section id="education">
   <div class="container">
     <span class="s-label rv">Academic Background</span>
@@ -839,21 +686,15 @@
         <div class="edu-col">Sri Sairam Engineering College, Chennai</div>
         <div class="edu-det">Autonomous Institution · Affiliated to Anna University · Chennai 600 025</div>
         <div class="course-row">
-          <span class="course-tag">Data Analytics</span>
-          <span class="course-tag">Embedded Systems</span>
-          <span class="course-tag">IoT Systems</span>
-          <span class="course-tag">Digital Electronics</span>
-          <span class="course-tag">Control Systems</span>
-          <span class="course-tag">Power Systems</span>
-          <span class="course-tag">Electrical Machines</span>
-          <span class="course-tag">Renewable Energy</span>
+          <span class="course-tag">Data Analytics</span><span class="course-tag">Embedded Systems</span><span class="course-tag">IoT Systems</span>
+          <span class="course-tag">Digital Electronics</span><span class="course-tag">Control Systems</span><span class="course-tag">Power Systems</span>
+          <span class="course-tag">Electrical Machines</span><span class="course-tag">Renewable Energy</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ CERTIFICATIONS ══ -->
 <section id="certifications">
   <div class="container">
     <span class="s-label rv">Verified Learning</span>
@@ -861,92 +702,51 @@
     <div class="s-rule rv d2"></div>
     <div class="cert-grid">
       <div class="cert-card rv d1">
-        <div class="cert-badge">CERTIFIED</div>
-        <div class="cert-logo">IIT B</div>
-        <div class="cert-name">Python 3.4.3 Training</div>
-        <div class="cert-issuer">SINE · IIT Bombay</div>
-        <div class="cert-meta">
-          <span class="cert-date">Dec. 2025</span>
-          <span class="cert-score">70%</span>
-        </div>
+        <div class="cert-badge">CERTIFIED</div><div class="cert-logo">IIT B</div>
+        <div class="cert-name">Python 3.4.3 Training</div><div class="cert-issuer">SINE · IIT Bombay</div>
+        <div class="cert-meta"><span class="cert-date">Dec. 2025</span><span class="cert-score">70%</span></div>
         <div class="cert-id">Spoken Tutorial · IIT Bombay</div>
       </div>
-
       <div class="cert-card rv d2">
-        <div class="cert-badge">ELITE</div>
-        <div class="cert-logo">IIT KGP</div>
-        <div class="cert-name">Computer Networks and Internet Protocol</div>
-        <div class="cert-issuer">NPTEL · IIT Kharagpur</div>
-        <div class="cert-meta">
-          <span class="cert-date">Jan – Apr 2026 · 12 weeks · 4 Credits</span>
-          <span class="cert-score">63%</span>
-        </div>
+        <div class="cert-badge">ELITE</div><div class="cert-logo">IIT KGP</div>
+        <div class="cert-name">Computer Networks and Internet Protocol</div><div class="cert-issuer">NPTEL · IIT Kharagpur</div>
+        <div class="cert-meta"><span class="cert-date">Jan – Apr 2026 · 12 weeks · 4 Credits</span><span class="cert-score">63%</span></div>
         <div class="cert-id">Roll No: NPTEL26CS35S685807152</div>
       </div>
-
       <div class="cert-card rv d3">
-        <div class="cert-badge">DIPLOMA</div>
-        <div class="cert-logo">CSC</div>
-        <div class="cert-name">Honours Diploma in Computer Applications (HDCA)</div>
-        <div class="cert-issuer">CSC Computer Software College · ISO 9001:2015</div>
-        <div class="cert-meta">
-          <span class="cert-date">Sep 2022 – Sep 2023 · 1 Year</span>
-          <span class="cert-score">Grade B</span>
-        </div>
+        <div class="cert-badge">DIPLOMA</div><div class="cert-logo">CSC</div>
+        <div class="cert-name">Honours Diploma in Computer Applications (HDCA)</div><div class="cert-issuer">CSC Computer Software College · ISO 9001:2015</div>
+        <div class="cert-meta"><span class="cert-date">Sep 2022 – Sep 2023 · 1 Year</span><span class="cert-score">Grade B</span></div>
         <div class="cert-id">Reg. No: M37K511508 · Pammal Centre</div>
       </div>
-
       <div class="cert-card rv d4">
-        <div class="cert-badge">CERTIFIED</div>
-        <div class="cert-logo">GUVI · HCL · Google</div>
-        <div class="cert-name">Embedded Systems &amp; IoT with Lab</div>
-        <div class="cert-issuer">GUVI · HCL · Google for Education Partner</div>
-        <div class="cert-meta">
-          <span class="cert-date">Apr. 2026</span>
-          <span class="cert-score">Certified</span>
-        </div>
+        <div class="cert-badge">CERTIFIED</div><div class="cert-logo">GUVI · HCL · Google</div>
+        <div class="cert-name">Embedded Systems &amp; IoT with Lab</div><div class="cert-issuer">GUVI · HCL · Google for Education Partner</div>
+        <div class="cert-meta"><span class="cert-date">Apr. 2026</span><span class="cert-score">Certified</span></div>
         <div class="cert-id">GUVI / HCL / Google for Education</div>
       </div>
-
       <div class="cert-card rv d1">
-        <div class="cert-badge">ELITE</div>
-        <div class="cert-logo">IIT KGP</div>
-        <div class="cert-name">Introduction to Internet of Things</div>
-        <div class="cert-issuer">NPTEL · IIT Kharagpur</div>
-        <div class="cert-meta">
-          <span class="cert-date">Jul – Oct 2025 · 12 weeks</span>
-          <span class="cert-score">71%</span>
-        </div>
+        <div class="cert-badge">ELITE</div><div class="cert-logo">IIT KGP</div>
+        <div class="cert-name">Introduction to Internet of Things</div><div class="cert-issuer">NPTEL · IIT Kharagpur</div>
+        <div class="cert-meta"><span class="cert-date">Jul – Oct 2025 · 12 weeks</span><span class="cert-score">71%</span></div>
         <div class="cert-id">NPTEL Elite Certified</div>
       </div>
-
       <div class="cert-card rv d2">
-        <div class="cert-badge">ELITE</div>
-        <div class="cert-logo">IIT HYD</div>
-        <div class="cert-name">UN Sustainable Development Goals</div>
-        <div class="cert-issuer">NPTEL · IIT Hyderabad</div>
-        <div class="cert-meta">
-          <span class="cert-date">Jan – Apr 2025 · 12 weeks</span>
-          <span class="cert-score">63%</span>
-        </div>
+        <div class="cert-badge">ELITE</div><div class="cert-logo">IIT HYD</div>
+        <div class="cert-name">UN Sustainable Development Goals</div><div class="cert-issuer">NPTEL · IIT Hyderabad</div>
+        <div class="cert-meta"><span class="cert-date">Jan – Apr 2025 · 12 weeks</span><span class="cert-score">63%</span></div>
         <div class="cert-id">Roll No: NPTEL25HS81S2643200059</div>
       </div>
       <div class="cert-card rv d3">
-        <div class="cert-badge">NPTEL</div>
-        <div class="cert-logo">IIT M</div>
-        <div class="cert-name">Design Thinking — A Primer</div>
-        <div class="cert-issuer">NPTEL · IIT Madras</div>
-        <div class="cert-meta">
-          <span class="cert-date">Jul – Aug 2024 · 4 weeks</span>
-          <span class="cert-score">56%</span>
-        </div>
+        <div class="cert-badge">NPTEL</div><div class="cert-logo">IIT M</div>
+        <div class="cert-name">Design Thinking — A Primer</div><div class="cert-issuer">NPTEL · IIT Madras</div>
+        <div class="cert-meta"><span class="cert-date">Jul – Aug 2024 · 4 weeks</span><span class="cert-score">56%</span></div>
         <div class="cert-id">Roll No: NPTEL24MG72S333111146</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ ACHIEVEMENTS ══ -->
 <section id="achievements">
   <div class="container">
     <span class="s-label rv">Recognition &amp; Impact</span>
@@ -955,37 +755,23 @@
     <div class="ach-grid">
       <div class="ach-card rv d1">
         <div class="ach-ico">🏭</div>
-        <div>
-          <div class="ach-title">Enterprise Software Delivery</div>
-          <div class="ach-desc">Independently designed and delivered a production-grade full-stack business application (Gate Pass Management System) at Prodapt Solutions — digitising a complete organisation-wide manual paper workflow into a multi-stage automated software system.</div>
-        </div>
-      </div>
-      <div class="ach-card rv d2">
-        <div class="ach-ico">📄</div>
-        <div>
-          <div class="ach-title">ICECER 2025 — Research Paper</div>
-          <div class="ach-desc">Co-authored and submitted a peer-reviewed paper on carbon capture technologies at the International Conference on Emerging and Current Engineering Research, Sri Sairam Engineering College (2025).</div>
-        </div>
+        <div><div class="ach-title">Enterprise Software Delivery</div>
+        <div class="ach-desc">Independently designed and delivered a production-grade full-stack business application (Gate Pass Management System) at Prodapt Solutions — digitising a complete organisation-wide manual paper workflow into a multi-stage automated software system.</div></div>
       </div>
       <div class="ach-card rv d3">
         <div class="ach-ico">⚡</div>
-        <div>
-          <div class="ach-title">~48% Efficiency Gain via Control Logic</div>
-          <div class="ach-desc">Wrote the Python control logic for a dual-sensor automatic solar tracking system, demonstrating a ~48% improvement in photovoltaic energy capture through experimental validation against a fixed-panel baseline.</div>
-        </div>
+        <div><div class="ach-title">~48% Efficiency Gain via Control Logic</div>
+        <div class="ach-desc">Wrote the Python control logic for a dual-sensor automatic solar tracking system, demonstrating a ~48% improvement in photovoltaic energy capture through experimental validation against a fixed-panel baseline.</div></div>
       </div>
       <div class="ach-card rv d4">
         <div class="ach-ico">🌱</div>
-        <div>
-          <div class="ach-title">SDG-Aligned Systems Design</div>
-          <div class="ach-desc">Designed the CO₂ monitoring system's data pipeline and dashboard in deliberate alignment with UN Sustainable Development Goals 9 (Industry), 11 (Sustainable Cities), and 13 (Climate Action).</div>
-        </div>
+        <div><div class="ach-title">SDG-Aligned Systems Design</div>
+        <div class="ach-desc">Designed the CO₂ monitoring system's data pipeline and dashboard in deliberate alignment with UN Sustainable Development Goals 9 (Industry), 11 (Sustainable Cities), and 13 (Climate Action).</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
 <section id="contact">
   <div class="container">
     <div class="contact-wrap rv">
@@ -993,10 +779,7 @@
       <h2 class="contact-title">Open to Software Developer Roles (Fresher)</h2>
       <p class="contact-sub">Software Developer &nbsp;·&nbsp; Full Stack / Backend Roles &nbsp;·&nbsp; Internships &nbsp;·&nbsp; Entry-Level / Graduate Roles</p>
       <div class="contact-links">
-        <a href="mailto:anirudhmadhavan13@gmail.com"
-           class="c-link"
-           onclick="window.location.href='mailto:anirudhmadhavan13@gmail.com'; return false;"
-           rel="noopener">✉&nbsp; anirudhmadhavan13@gmail.com</a>
+        <a href="mailto:anirudhmadhavan13@gmail.com" class="c-link" onclick="window.location.href='mailto:anirudhmadhavan13@gmail.com'; return false;" rel="noopener">✉&nbsp; anirudhmadhavan13@gmail.com</a>
         <a href="https://www.linkedin.com/in/anirudhm4" target="_blank" rel="noopener" class="c-link">💼&nbsp; LinkedIn — @anirudhm4</a>
         <a href="tel:+919500247685" class="c-link">📞&nbsp; +91 95002 47685</a>
       </div>
@@ -1009,14 +792,11 @@
 </footer>
 
 <script>
-  // Nav scroll state
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 16);
   }, { passive: true });
 
-  // RESPONSIVE: Mobile nav — smooth open/close, body-scroll lock while open,
-  // close on outside click (overlay), close on Escape, and animated hamburger state.
   const mobileNav = document.getElementById('mobileNav');
   const mobileNavOverlay = document.getElementById('mobileNavOverlay');
   const navMenuBtn = document.getElementById('navMenuBtn');
@@ -1026,7 +806,7 @@
     mobileNavOverlay.classList.toggle('open', isOpen);
     navMenuBtn.classList.toggle('is-open', isOpen);
     navMenuBtn.setAttribute('aria-expanded', String(isOpen));
-    document.body.classList.toggle('no-scroll', isOpen); // prevent background scroll while menu is open
+    document.body.classList.toggle('no-scroll', isOpen);
   }
   function closeMobileNav() {
     mobileNav.classList.remove('open');
@@ -1035,12 +815,10 @@
     navMenuBtn.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('no-scroll');
   }
-  // Close on Escape key for keyboard accessibility
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMobileNav();
   });
 
-  // Scroll reveal
   const revealEls = document.querySelectorAll('.rv');
   const observer = new IntersectionObserver(
     (entries) => {
@@ -1055,7 +833,6 @@
   );
   revealEls.forEach(el => observer.observe(el));
 
-  // Smooth scroll for all anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
       const id = this.getAttribute('href');
