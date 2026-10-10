@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anirudh M | Software Developer (Fresher) · Full Stack · Backend</title>
-  <meta name="description" content="Portfolio of Anirudh M — final-year engineering student and aspiring Software Developer who has built Docker and AWS-native deployment platforms, enterprise Power Platform applications, and ESP32 embedded systems. Open to Software Developer, Full Stack, and Backend Developer internships and fresher roles." />
-  <meta name="keywords" content="Anirudh M, Software Developer fresher, Full Stack Developer, Backend Developer, React, Node.js, Express, TypeScript, Docker, AWS CDK, Step Functions, ECS Fargate, PostgreSQL, Power Platform, Chennai, Anna University" />
+  <meta name="description" content="Portfolio of Anirudh M — final-year engineering student and aspiring Software Developer who has designed BlackWater (a cloud-agnostic Docker PaaS) and Arcpilot (an AWS-native deployment platform using S3, Step Functions, CodeBuild, ECR, ECS/Fargate and AWS CDK), enterprise Power Platform applications, and ESP32 embedded systems. Open to Software Developer, Full Stack, and Backend Developer internships and fresher roles." />
+  <meta name="keywords" content="Anirudh M, Software Developer fresher, Full Stack Developer, Backend Developer, Cloud, React, Vite, Node.js, Express, TypeScript, Docker, BullMQ, Redis, Traefik, PostgreSQL, AWS CDK, Step Functions, CodeBuild, ECR, ECS Fargate, ALB, S3, CloudFront, Secrets Manager, CloudWatch, Power Platform, Chennai, Anna University" />
   <meta name="author" content="Anirudh M" />
   <meta property="og:title" content="Anirudh M — Software Developer Portfolio" />
   <meta property="og:description" content="Building scalable, data-driven software applications across backend, automation, and full-stack systems." />
@@ -343,6 +343,12 @@
     .cert-date { font-size: .76rem; color: var(--t3); }
     .cert-score { font-family: 'Syne', sans-serif; font-size: .88rem; font-weight: 700; color: var(--m-red); }
     .cert-id { font-size: .7rem; color: var(--t3); font-style: italic; overflow-wrap: break-word; }
+    .cert-link {
+      display: inline-flex; align-items: center; gap: .35rem; width: fit-content;
+      font-size: .76rem; font-weight: 600; color: var(--m-blue); text-decoration: none;
+      padding: .15rem 0; transition: color .2s;
+    }
+    .cert-link:hover { color: var(--m-red); }
     .ach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 1.2rem; align-items: stretch; }
     .ach-card {
       background: var(--bg-card); border: 1px solid var(--border);
@@ -547,7 +553,7 @@
       <div class="about-text rv d2">
         <p>I am a <strong>final-year engineering student</strong> pursuing a career as a <strong>Software Developer</strong>, with a strong grip on programming fundamentals and a track record of shipping applications that solve real business problems — not just classroom exercises. My experience spans full-stack application development, backend workflow automation, and data-driven analytics.</p>
         <p>I have delivered end-to-end software solutions — most notably an enterprise-grade full-stack workflow application on the <strong>Microsoft Power Platform</strong> during my internship at Prodapt Solutions, where I designed and implemented multi-stage digital workflows that transformed manual, paper-based operations into an automated business process, improving accuracy and productivity. I've also applied the same engineering rigor to <strong>Python-driven IoT and data systems</strong>.</p>
-        <p>My technical expertise includes <strong>Python, C, C++, TypeScript, SQL</strong>, <strong>React and Node.js/Express</strong>, <strong>Docker</strong>, <strong>AWS (CDK, Step Functions, CodeBuild, ECR, ECS/Fargate, RDS)</strong>, the <strong>Microsoft Power Platform</strong>, and embedded systems. Alongside my internship work, I have designed two independent deployment platforms — <strong>BlackWater</strong> (a cloud-agnostic Docker PaaS) and <strong>Arcpilot</strong> (an AWS-native PaaS) — and I enjoy building reliable backend workflows, integrating databases and APIs, and turning data into dashboards.</p>
+        <p>My technical expertise includes <strong>Python, C, C++, TypeScript, SQL</strong>, <strong>React, Vite and Node.js/Express</strong>, <strong>Docker, BullMQ, Redis and Traefik</strong>, <strong>AWS (CDK, S3, Step Functions, CodeBuild, ECR, ECS/Fargate, ALB, RDS, Secrets Manager, CloudWatch, EventBridge, IAM, Route 53, ACM, CloudFront)</strong>, the <strong>Microsoft Power Platform</strong>, and embedded systems. Alongside my internship work, I have designed two independent deployment platforms — <strong>BlackWater</strong> (a cloud-agnostic, Docker-native PaaS) and <strong>Arcpilot</strong> (an AWS-native PaaS built around managed AWS services) — and I enjoy building reliable backend workflows, integrating databases and APIs, and turning data into dashboards.</p>
         <p>Beyond software development, I co-authored a research paper submitted to <strong>ICECER 2025</strong> on carbon capture technologies, reflecting my commitment to applying engineering and technology to solve complex global challenges. My projects are guided by a strong problem-solving mindset and an emphasis on writing clean, maintainable, and scalable solutions.</p>
         <p>I am actively seeking opportunities as a <strong>Software Developer</strong> where I can contribute to building high-quality software, collaborate with engineering teams, and continuously expand my expertise in modern software development, cloud technologies, and artificial intelligence.</p>
       </div>
@@ -573,41 +579,58 @@
         <div class="sk-tags">
           <span class="sk-tag hi">Python</span><span class="sk-tag hi">TypeScript</span><span class="sk-tag hi">JavaScript</span>
           <span class="sk-tag">C</span><span class="sk-tag">C++</span><span class="sk-tag">SQL</span>
+          <span class="sk-tag">HTML5</span><span class="sk-tag">CSS3</span>
         </div>
       </div>
       <div class="sk-cat rv d2">
         <div class="sk-cat-title">🌐 Web &amp; Backend</div>
         <div class="sk-tags">
           <span class="sk-tag hi">React</span><span class="sk-tag hi">Node.js</span><span class="sk-tag hi">Express</span>
-          <span class="sk-tag">TanStack Start</span><span class="sk-tag">HTML5</span><span class="sk-tag">CSS3</span>
+          <span class="sk-tag">Vite</span><span class="sk-tag">TanStack Start</span><span class="sk-tag">REST APIs</span>
         </div>
       </div>
       <div class="sk-cat rv d3">
-        <div class="sk-cat-title">☁️ Cloud &amp; DevOps</div>
+        <div class="sk-cat-title">☁️ AWS Cloud</div>
         <div class="sk-tags">
-          <span class="sk-tag hi">Docker</span><span class="sk-tag hi">AWS CDK</span><span class="sk-tag hi">Step Functions</span>
-          <span class="sk-tag">CodeBuild</span><span class="sk-tag">ECR</span><span class="sk-tag">ECS/Fargate</span>
-          <span class="sk-tag">Docker Compose</span><span class="sk-tag">Traefik</span><span class="sk-tag">BullMQ</span><span class="sk-tag">Redis</span>
+          <span class="sk-tag hi">AWS CDK</span><span class="sk-tag hi">Step Functions</span><span class="sk-tag hi">ECS/Fargate</span>
+          <span class="sk-tag">S3</span><span class="sk-tag">CloudFront</span><span class="sk-tag">CodeBuild</span><span class="sk-tag">ECR</span>
+          <span class="sk-tag">ALB</span><span class="sk-tag">RDS</span><span class="sk-tag">Secrets Manager</span><span class="sk-tag">CloudWatch</span>
+          <span class="sk-tag">EventBridge</span><span class="sk-tag">IAM</span><span class="sk-tag">VPC</span><span class="sk-tag">Route 53</span><span class="sk-tag">ACM</span>
         </div>
       </div>
       <div class="sk-cat rv d4">
-        <div class="sk-cat-title">🗄️ Databases</div>
+        <div class="sk-cat-title">🐳 DevOps &amp; Containers</div>
         <div class="sk-tags">
-          <span class="sk-tag hi">PostgreSQL</span><span class="sk-tag hi">MySQL</span><span class="sk-tag">Amazon RDS</span>
+          <span class="sk-tag hi">Docker</span><span class="sk-tag">Docker Compose</span><span class="sk-tag">Traefik</span>
+          <span class="sk-tag">BullMQ</span><span class="sk-tag">Redis</span><span class="sk-tag">Infrastructure as Code</span>
+          <span class="sk-tag">Containerised Deployments</span>
         </div>
       </div>
       <div class="sk-cat rv d1">
+        <div class="sk-cat-title">🗄️ Databases</div>
+        <div class="sk-tags">
+          <span class="sk-tag hi">PostgreSQL</span><span class="sk-tag hi">MySQL</span><span class="sk-tag">Amazon RDS</span><span class="sk-tag">Redis</span>
+        </div>
+      </div>
+      <div class="sk-cat rv d2">
         <div class="sk-cat-title">⚙️ Microsoft Platform &amp; Analytics</div>
         <div class="sk-tags">
           <span class="sk-tag hi">PowerApps</span><span class="sk-tag hi">Power Automate</span><span class="sk-tag hi">SharePoint Online</span>
           <span class="sk-tag">Power BI</span><span class="sk-tag">Matplotlib</span><span class="sk-tag">Data Visualization</span>
         </div>
       </div>
-      <div class="sk-cat rv d2">
+      <div class="sk-cat rv d3">
         <div class="sk-cat-title">🔌 Embedded &amp; IoT</div>
         <div class="sk-tags">
           <span class="sk-tag">ESP32</span><span class="sk-tag">Arduino</span><span class="sk-tag">NDIR Sensors</span>
           <span class="sk-tag">OLED/LCD</span><span class="sk-tag">Serial Interface</span>
+        </div>
+      </div>
+      <div class="sk-cat rv d4">
+        <div class="sk-cat-title">🧭 Practices &amp; Design</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Workflow Orchestration</span><span class="sk-tag">Event-Driven Design</span><span class="sk-tag">IAM Role Separation</span>
+          <span class="sk-tag">Deployment Lifecycle Design</span><span class="sk-tag">Accessibility (WCAG 2.2 AA)</span>
         </div>
       </div>
     </div>
@@ -655,11 +678,11 @@
         <div class="proj-num">PROJECT 01</div>
         <div class="proj-ico">🐳</div>
         <div class="proj-name">BlackWater — Cloud-Agnostic Docker PaaS</div>
-        <p class="proj-desc">A Docker-based platform where developers deploy applications through a React dashboard backed by a Node.js/Express API. BullMQ and Redis queue the builds, workers produce Docker images and run containers, and Traefik routes traffic to the live applications. Includes authentication, project management, deployment tracking and status/log views, with PostgreSQL for persistent data.</p>
+        <p class="proj-desc">A cloud-agnostic, Docker-native platform where developers deploy applications through a React/Vite (TypeScript) dashboard backed by a Node.js/Express API. The deployment flow runs React dashboard → Express API → PostgreSQL + Redis/BullMQ → Docker build worker → Docker runtime → Traefik: BullMQ and Redis queue the builds, workers produce Docker images and run containers, and Traefik routes traffic to the live applications. Includes authentication, project management, deployment tracking and status/log views, with PostgreSQL for persistent data. The interface uses a structured, content-first dark design with reusable components and a WCAG 2.2 AA accessibility target.</p>
         <div class="proj-outcome">🔧 Cloud-agnostic · Docker-native deployment pipeline</div>
         <div class="proj-tags">
-          <span class="proj-tag">React</span><span class="proj-tag">Node.js</span><span class="proj-tag">Express</span>
-          <span class="proj-tag">Docker</span><span class="proj-tag">BullMQ</span><span class="proj-tag">Redis</span>
+          <span class="proj-tag">React</span><span class="proj-tag">Vite</span><span class="proj-tag">TypeScript</span><span class="proj-tag">Node.js</span><span class="proj-tag">Express</span>
+          <span class="proj-tag">Docker</span><span class="proj-tag">Docker Compose</span><span class="proj-tag">BullMQ</span><span class="proj-tag">Redis</span>
           <span class="proj-tag">PostgreSQL</span><span class="proj-tag">Traefik</span>
         </div>
       </div>
@@ -667,12 +690,13 @@
         <div class="proj-num">PROJECT 02</div>
         <div class="proj-ico">☁️</div>
         <div class="proj-name">Arcpilot — AWS-Native Deployment Platform</div>
-        <p class="proj-desc">An AWS-native deployment platform designed to take an application from source upload to a running service using managed AWS services: S3 → Step Functions → CodeBuild → ECR → ECS/Fargate → ALB, with validation, Docker builds, immutable image tags and health checks. Infrastructure is defined as 12 AWS CDK stacks with separate IAM roles for the API, CodeBuild, Step Functions and EventBridge. The dashboard includes a development simulator of the deployment state machine.</p>
-        <div class="proj-outcome">🛠️ Architecture + CDK infrastructure · simulator clearly labelled as development</div>
+        <p class="proj-desc">An AWS-native deployment platform designed to take an application from source ZIP upload to a running service using managed AWS services: S3 → Step Functions → CodeBuild → ECR → ECS/Fargate → ALB, with validation, Docker builds, immutable image tags and health checks. The lifecycle is modelled as a state machine (queued, validating, building, pushing, deploying, health check, success). Infrastructure is defined as 12 AWS CDK stacks with separate IAM roles for the API, CodeBuild, Step Functions and EventBridge, and the architecture also covers RDS PostgreSQL, Secrets Manager, CloudWatch, Route 53/ACM and S3 + CloudFront for frontend hosting. The editorial, workflow-driven dashboard shows the deployment pipeline, timeline and logs, and includes a development simulator of the state machine.</p>
+        <div class="proj-outcome">🛠️ Architecture + CDK infrastructure · built for an AWS hackathon · simulator clearly labelled as development</div>
         <div class="proj-tags">
           <span class="proj-tag">TypeScript</span><span class="proj-tag">TanStack Start</span><span class="proj-tag">AWS CDK</span>
-          <span class="proj-tag">Step Functions</span><span class="proj-tag">CodeBuild</span><span class="proj-tag">ECR</span>
-          <span class="proj-tag">ECS/Fargate</span><span class="proj-tag">RDS</span>
+          <span class="proj-tag">S3</span><span class="proj-tag">Step Functions</span><span class="proj-tag">CodeBuild</span><span class="proj-tag">ECR</span>
+          <span class="proj-tag">ECS/Fargate</span><span class="proj-tag">ALB</span><span class="proj-tag">RDS</span><span class="proj-tag">Secrets Manager</span>
+          <span class="proj-tag">CloudWatch</span><span class="proj-tag">EventBridge</span><span class="proj-tag">IAM</span><span class="proj-tag">Route 53</span><span class="proj-tag">ACM</span><span class="proj-tag">CloudFront</span>
         </div>
       </div>
       <div class="proj-card rv d3">
@@ -741,9 +765,10 @@
     <div class="cert-grid">
       <div class="cert-card rv d1">
         <div class="cert-badge">CERTIFIED</div><div class="cert-logo">BESANT</div>
-        <div class="cert-name">Web Designing Training (HTML5, CSS, JavaScript)</div><div class="cert-issuer">Besant Technologies</div>
-        <div class="cert-meta"><span class="cert-date">Aug. 2026</span><span class="cert-score">Completed</span></div>
+        <div class="cert-name">Web Designing Training</div><div class="cert-issuer">Besant Technologies</div>
+        <div class="cert-meta"><span class="cert-date">31 Aug. 2026</span><span class="cert-score">Completed</span></div>
         <div class="cert-id">Cert ID: BDZ-152444 · Chennai-42</div>
+        <a class="cert-link" href="Anirudh_M_certificate.pdf" target="_blank" rel="noopener">View certificate ↗</a>
       </div>
       <div class="cert-card rv d1">
         <div class="cert-badge">CERTIFIED</div><div class="cert-logo">IIT B</div>
@@ -796,22 +821,47 @@
     <span class="s-label rv">Recognition &amp; Impact</span>
     <h2 class="s-title rv d1">Achievements</h2>
     <div class="s-rule rv d2"></div>
+
     <div class="ach-grid">
+
       <div class="ach-card rv d1">
         <div class="ach-ico">🏭</div>
-        <div><div class="ach-title">Enterprise Software Delivery</div>
-        <div class="ach-desc">Independently designed and delivered a production-grade full-stack business application (Gate Pass Management System) at Prodapt Solutions — digitising a complete organisation-wide manual paper workflow into a multi-stage automated software system.</div></div>
+        <div>
+          <div class="ach-title">Enterprise Software Delivery</div>
+          <div class="ach-desc">Designed and delivered the Gate Pass Management System during my internship at Prodapt Solutions, digitising paper-based workflows through a Microsoft Power Platform application with multi-stage approvals, automated notifications, and operational analytics.</div>
+        </div>
       </div>
+
+      <div class="ach-card rv d2">
+        <div class="ach-ico">🐳</div>
+        <div>
+          \1Designed a Docker-native platform for application deployment using React, Vite, Node.js and Express, with BullMQ and Redis for job queuing, a Docker build worker, PostgreSQL for persistent data, and Traefik for application routing. Focused on a cloud-agnostic deployment workflow with container and deployment-status management.\2
+        </div>
+      </div>
+
       <div class="ach-card rv d3">
+        <div class="ach-ico">☁️</div>
+        <div>
+          \1Designed an AWS-native deployment architecture connecting S3, Step Functions, CodeBuild, ECR, ECS/Fargate, and an Application Load Balancer, with a modelled deployment lifecycle and health checks. Defined infrastructure using AWS CDK across 12 stacks with separate IAM roles, plus a development simulator for exploring deployment-state transitions.\2
+        </div>
+      </div>
+
+      <div class="ach-card rv d1">
         <div class="ach-ico">⚡</div>
-        <div><div class="ach-title">~48% Efficiency Gain via Control Logic</div>
-        <div class="ach-desc">Wrote the Python control logic for a dual-sensor automatic solar tracking system, demonstrating a ~48% improvement in photovoltaic energy capture through experimental validation against a fixed-panel baseline.</div></div>
+        <div>
+          <div class="ach-title">Solar Tracking Performance Improvement</div>
+          <div class="ach-desc">Developed Python control logic for a dual-sensor automatic solar tracker using Arduino-based actuation. Experimental testing indicated approximately 48% greater captured energy compared with a fixed-panel baseline under the tested conditions.</div>
+        </div>
       </div>
-      <div class="ach-card rv d4">
+
+      <div class="ach-card rv d2">
         <div class="ach-ico">🌱</div>
-        <div><div class="ach-title">SDG-Aligned Systems Design</div>
-        <div class="ach-desc">Designed the ESP32 CO₂ capture and monitoring system in deliberate alignment with UN Sustainable Development Goals 9 (Industry), 11 (Sustainable Cities) and 13 (Climate Action), and co-authored a conference paper submitted to ICECER 2025.</div></div>
+        <div>
+          <div class="ach-title">SDG-Aligned Systems Design</div>
+          <div class="ach-desc">Designed an ESP32-based CO₂ capture and monitoring system aligned with UN Sustainable Development Goals 9, 11, and 13. Co-authored a conference paper submitted to ICECER 2025.</div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
