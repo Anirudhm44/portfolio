@@ -537,8 +537,8 @@
       <a href="#" class="btn-s" onclick="alert('Replace this with your hosted resume PDF link.');return false;">↓&nbsp; Resume</a>
     </div>
     <div class="hero-stats">
-      <div><div class="stat-v">5</div><div class="stat-l">Software Projects</div></div>
-      <div><div class="stat-v">9</div><div class="stat-l">Certifications</div></div>
+      <div><div class="stat-v">3</div><div class="stat-l">Software Projects</div></div>
+      <div><div class="stat-v">7</div><div class="stat-l">Certifications</div></div>
       <div><div class="stat-v">2025</div><div class="stat-l">Software Internship</div></div>
     </div>
   </div>
@@ -587,23 +587,6 @@
         <div class="sk-tags">
           <span class="sk-tag hi">React</span><span class="sk-tag hi">Node.js</span><span class="sk-tag hi">Express</span>
           <span class="sk-tag">Vite</span><span class="sk-tag">TanStack Start</span><span class="sk-tag">REST APIs</span>
-        </div>
-      </div>
-      <div class="sk-cat rv d3">
-        <div class="sk-cat-title">☁️ AWS Cloud</div>
-        <div class="sk-tags">
-          <span class="sk-tag hi">AWS CDK</span><span class="sk-tag hi">Step Functions</span><span class="sk-tag hi">ECS/Fargate</span>
-          <span class="sk-tag">S3</span><span class="sk-tag">CloudFront</span><span class="sk-tag">CodeBuild</span><span class="sk-tag">ECR</span>
-          <span class="sk-tag">ALB</span><span class="sk-tag">RDS</span><span class="sk-tag">Secrets Manager</span><span class="sk-tag">CloudWatch</span>
-          <span class="sk-tag">EventBridge</span><span class="sk-tag">IAM</span><span class="sk-tag">VPC</span><span class="sk-tag">Route 53</span><span class="sk-tag">ACM</span>
-        </div>
-      </div>
-      <div class="sk-cat rv d4">
-        <div class="sk-cat-title">🐳 DevOps &amp; Containers</div>
-        <div class="sk-tags">
-          <span class="sk-tag hi">Docker</span><span class="sk-tag">Docker Compose</span><span class="sk-tag">Traefik</span>
-          <span class="sk-tag">BullMQ</span><span class="sk-tag">Redis</span><span class="sk-tag">Infrastructure as Code</span>
-          <span class="sk-tag">Containerised Deployments</span>
         </div>
       </div>
       <div class="sk-cat rv d1">
@@ -676,31 +659,6 @@
     <div class="proj-grid">
       <div class="proj-card rv d1">
         <div class="proj-num">PROJECT 01</div>
-        <div class="proj-ico">🐳</div>
-        <div class="proj-name">Arcpilot — Cloud-Agnostic Docker PaaS</div>
-        <p class="proj-desc">A cloud-agnostic, Docker-native platform where developers deploy applications through a React/Vite (TypeScript) dashboard backed by a Node.js/Express API. The deployment flow runs React dashboard → Express API → PostgreSQL + Redis/BullMQ → Docker build worker → Docker runtime → Traefik: BullMQ and Redis queue the builds, workers produce Docker images and run containers, and Traefik routes traffic to the live applications. Includes authentication, project management, deployment tracking and status/log views, with PostgreSQL for persistent data. The interface uses a structured, content-first dark design with reusable components and a WCAG 2.2 AA accessibility target.</p>
-        <div class="proj-outcome">🔧 Cloud-agnostic · Docker-native deployment pipeline</div>
-        <div class="proj-tags">
-          <span class="proj-tag">React</span><span class="proj-tag">Vite</span><span class="proj-tag">TypeScript</span><span class="proj-tag">Node.js</span><span class="proj-tag">Express</span>
-          <span class="proj-tag">Docker</span><span class="proj-tag">Docker Compose</span><span class="proj-tag">BullMQ</span><span class="proj-tag">Redis</span>
-          <span class="proj-tag">PostgreSQL</span><span class="proj-tag">Traefik</span>
-        </div>
-      </div>
-      <div class="proj-card rv d2">
-        <div class="proj-num">PROJECT 02</div>
-        <div class="proj-ico">☁️</div>
-        <div class="proj-name">Arcpilot — AWS-Native Deployment Platform</div>
-        <p class="proj-desc">An AWS-native deployment platform designed to take an application from source ZIP upload to a running service using managed AWS services: S3 → Step Functions → CodeBuild → ECR → ECS/Fargate → ALB, with validation, Docker builds, immutable image tags and health checks. The lifecycle is modelled as a state machine (queued, validating, building, pushing, deploying, health check, success). Infrastructure is defined as 12 AWS CDK stacks with separate IAM roles for the API, CodeBuild, Step Functions and EventBridge, and the architecture also covers RDS PostgreSQL, Secrets Manager, CloudWatch, Route 53/ACM and S3 + CloudFront for frontend hosting. The editorial, workflow-driven dashboard shows the deployment pipeline, timeline and logs, and includes a development simulator of the state machine.</p>
-        <div class="proj-outcome">🛠️ Architecture + CDK infrastructure · built for an AWS hackathon · simulator clearly labelled as development</div>
-        <div class="proj-tags">
-          <span class="proj-tag">TypeScript</span><span class="proj-tag">TanStack Start</span><span class="proj-tag">AWS CDK</span>
-          <span class="proj-tag">S3</span><span class="proj-tag">Step Functions</span><span class="proj-tag">CodeBuild</span><span class="proj-tag">ECR</span>
-          <span class="proj-tag">ECS/Fargate</span><span class="proj-tag">ALB</span><span class="proj-tag">RDS</span><span class="proj-tag">Secrets Manager</span>
-          <span class="proj-tag">CloudWatch</span><span class="proj-tag">EventBridge</span><span class="proj-tag">IAM</span><span class="proj-tag">Route 53</span><span class="proj-tag">ACM</span><span class="proj-tag">CloudFront</span>
-        </div>
-      </div>
-      <div class="proj-card rv d3">
-        <div class="proj-num">PROJECT 03</div>
         <div class="proj-ico">🌍</div>
         <div class="proj-name">ESP32-Based CO₂ Capture &amp; Monitoring System</div>
         <p class="proj-desc">An ESP32 system that monitors an adsorbent-based CO₂ capture unit, using a blower for controlled airflow. Dual NDIR sensors at the chamber inlet and outlet let the ESP32 compute live percentage reduction and capture efficiency. Calibration and data-acquisition routines in embedded C/Python reduce sensor noise, and readings show live on an OLED/LCD. Aligned with UN SDGs 9, 11 and 13.</p>
@@ -710,8 +668,8 @@
           <span class="proj-tag">Embedded C</span><span class="proj-tag">Python</span><span class="proj-tag">SDG 9 · 11 · 13</span>
         </div>
       </div>
-      <div class="proj-card rv d1">
-        <div class="proj-num">PROJECT 04</div>
+      <div class="proj-card rv d2">
+        <div class="proj-num">PROJECT 02</div>
         <div class="proj-ico">🗂️</div>
         <div class="proj-name">Gate Pass Management System</div>
         <p class="proj-desc">A full-stack, low-code enterprise application built end-to-end — front-end app, relational data layer, automated backend workflows, and an analytics dashboard — replacing a fully manual, paper-based process with a single digital system used organisation-wide.</p>
@@ -721,8 +679,8 @@
           <span class="proj-tag">SharePoint Online</span><span class="proj-tag">Workflow Automation</span><span class="proj-tag">Enterprise App</span>
         </div>
       </div>
-      <div class="proj-card rv d2">
-        <div class="proj-num">PROJECT 05</div>
+      <div class="proj-card rv d3">
+        <div class="proj-num">PROJECT 03</div>
         <div class="proj-ico">☀️</div>
         <div class="proj-name">Automatic Solar Tracker</div>
         <p class="proj-desc">Wrote the Python control software for a dual-sensor tracking system, communicating over a serial interface with an Arduino to drive real-time actuation logic. Logged and analysed performance data to validate efficiency gains against a static baseline.</p>
@@ -763,20 +721,6 @@
     <h2 class="s-title rv d1">Certifications</h2>
     <div class="s-rule rv d2"></div>
     <div class="cert-grid">
-      <div class="cert-card rv d1">
-        <div class="cert-badge">CERTIFIED</div><div class="cert-logo">BESANT</div>
-        <div class="cert-name">Web Designing Training</div><div class="cert-issuer">Besant Technologies</div>
-        <div class="cert-meta"><span class="cert-date">31 Aug. 2026</span><span class="cert-score">Completed</span></div>
-        <div class="cert-id">Cert ID: BDZ-152444 · Chennai-42</div>
-        <a class="cert-link" href="Anirudh_M_certificate.pdf" target="_blank" rel="noopener">View certificate ↗</a>
-      </div>
-      <div class="cert-card rv d2">
-        <div class="cert-badge">CERTIFIED</div><div class="cert-logo">BESANT</div>
-        <div class="cert-name">Java Training</div><div class="cert-issuer">Besant Technologies</div>
-        <div class="cert-meta"><span class="cert-date">8 Oct. 2026</span><span class="cert-score">Completed</span></div>
-        <div class="cert-id">Cert ID: 152444 · Chennai-42</div>
-        <a class="cert-link" href="Anirudh_M_certificate_java.pdf" target="_blank" rel="noopener">View certificate ↗</a>
-      </div>
       <div class="cert-card rv d1">
         <div class="cert-badge">CERTIFIED</div><div class="cert-logo">IIT B</div>
         <div class="cert-name">Python 3.4.3 Training</div><div class="cert-issuer">SINE · IIT Bombay</div>
@@ -840,22 +784,6 @@
       </div>
 
       <div class="ach-card rv d2">
-        <div class="ach-ico">🐳</div>
-        <div>
-          <div class="ach-title">Arcpilot — Docker-Native Deployment Platform</div>
-          <div class="ach-desc">Designed a Docker-native platform for application deployment using React, Vite, Node.js and Express, with BullMQ and Redis for job queuing, a Docker build worker, PostgreSQL for persistent data, and Traefik for application routing. Focused on a cloud-agnostic deployment workflow with container and deployment-status management.</div>
-        </div>
-      </div>
-
-      <div class="ach-card rv d3">
-        <div class="ach-ico">☁️</div>
-        <div>
-          <div class="ach-title">Arcpilot — AWS-Native Deployment Architecture</div>
-          <div class="ach-desc">Designed an AWS-native deployment architecture connecting S3, Step Functions, CodeBuild, ECR, ECS/Fargate, and an Application Load Balancer, with a modelled deployment lifecycle and health checks. Defined infrastructure using AWS CDK across 12 stacks with separate IAM roles, plus a development simulator for exploring deployment-state transitions.</div>
-        </div>
-      </div>
-
-      <div class="ach-card rv d1">
         <div class="ach-ico">⚡</div>
         <div>
           <div class="ach-title">Solar Tracking Performance Improvement</div>
@@ -863,7 +791,7 @@
         </div>
       </div>
 
-      <div class="ach-card rv d2">
+      <div class="ach-card rv d3">
         <div class="ach-ico">🌱</div>
         <div>
           <div class="ach-title">SDG-Aligned Systems Design</div>
